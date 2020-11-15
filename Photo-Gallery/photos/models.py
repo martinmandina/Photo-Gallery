@@ -13,14 +13,26 @@ class Location(models.Model):
     def location_delete(self):
         self.delete()
 
-# class Category(models.Model):
-#     title = models.CharField(max_length=50)
+    @classmethod
+    def location_update(cls, id, value):
+        cls.objects.filter(id=id).update(location_title=value)
 
-#     def __str__(self):
-#         return self.title
 
-#     def category_save(self):
-#         self.save()
+class Category(models.Model):
+    title = models.CharField(max_length=50)
 
-#     def category_delete(self):
-#         self.delete()
+    def __str__(self):
+        return self.title
+
+    def category_save(self):
+        self.save()
+
+    def category_delete(self):
+        self.delete()
+
+class Image(models.Model):
+    name = models.CharField(max_length =60)
+    description = models.TextField()
+    location = models.ForeignKey(Location)
+    category = models.ForeignKey(Category)
+    photos = models.ImageField(upload_to = 'photos/')

@@ -30,6 +30,10 @@ class Category(models.Model):
     def category_delete(self):
         self.delete()
 
+    @classmethod
+    def category_update(cls, id, value):
+        cls.objects.filter(id=id).update(title=value)
+
 
 class Image(models.Model):
     name = models.CharField(max_length =60)

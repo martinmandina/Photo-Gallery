@@ -23,6 +23,8 @@ class LocationTestClass(TestCase):
         location_updated = Location.objects.filter(title='Nairobi')
         self.assertTrue(len(location_updated)>0)
 
+    
+
     def test_location_delete(self):
         self.location.location_delete()
         location = Location.objects.all()
@@ -45,6 +47,14 @@ class CategoryTestClass(TestCase):
         self.category.category_save()
         categories = Category.objects.all()
         self.assertTrue(len(categories)>0)
+
+    def test_category_update(self):
+        self.category = Category(title = 'nature')
+        self.category.save()
+        new_category_title = 'Planes'
+        self.category.category_update(self.category.id,new_category_title)
+        category_updated = Category.objects.filter(title='Planes')
+        self.assertTrue(len(category_updated)>0)
 
     
     def test_delete_category(self):

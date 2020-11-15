@@ -5,4 +5,7 @@ from .models import Image,Location,Category
 # Create your views here.
 
 def display_images(request):
-    images = Image.get
+    images = Image.get_images()
+    return render(request,'images.html',{'images':images})
+
+

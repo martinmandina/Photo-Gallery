@@ -84,6 +84,13 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
 
+    # def test_image_update(self):
+    #     self.savannah = Image(name='savannah',description='green and beatiful',location=self.location,category=self.category)
+    #     self.savannah.image_save()
+    #     self.savannah.update_image(self.savannah.id,'media/image.jpg')
+    #     image_updated = Image.objects.filter(photos='media/image.jpg')
+    #     self.assertTrue(len(image_updated)>0)
+
     def test_delete_image(self):
         self.savannah.image_save()
         self.savannah.image_delete()

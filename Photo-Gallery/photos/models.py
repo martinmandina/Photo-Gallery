@@ -33,6 +33,6 @@ class Category(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length =60)
     description = models.TextField()
-    location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     photos = models.ImageField(upload_to = 'photos/')

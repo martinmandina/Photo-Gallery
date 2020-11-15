@@ -10,8 +10,8 @@ class Location(models.Model):
     def location_save(self):
         self.save()
 
-    def location_delete(self):
-        self.delete()
+    # def location_delete(self):
+    #     self.delete()
 
 # class Category(models.Model):
 #     title = models.CharField(max_length=50)

@@ -79,6 +79,14 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.savannah,Image))
 
+    def test_image_save(self):
+        self.savannah.image_save()
+        images = Image.objects.all()
+        self.assertTrue(len(images)>0)
+        
+
+
+
 
 
       

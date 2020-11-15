@@ -7,4 +7,10 @@ class Location(models.Model):
     def __str__(self):
         return self.title
 
-    
+    def location_save(self):
+        self.save()
+
+    def location_delete(self):
+        self.delete()
+
+

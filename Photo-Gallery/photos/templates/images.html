@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+
+{% block styles %}
+  {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+  {% endblock %}
+<body>
+<h1 style = "text-align: center">My <Br>
+  <i class="fa fa-camera" aria-hidden="true"></i>
+
+<hr style="background-color:rgb(159, 157, 190)">
+    {% for photos_item in photos %}
+
+		<div class = "row">
+		<figure class = "test thumbnail col-xs-6">
+      <img src="{{photos_item.image.url}}" id="myImg"  class="img-responsive"  width="300" height="200">
+      <div class="titleBox" style="font-family: 'Cabin Sketch', cursive">{{photos_item.image_name|upper}}</div>
+
+			<figcaption>
+
+			<a  href="{% url 'singlePhoto' photos_item.id %}"><button type="button" name="button" class="btn btn-danger"> view image</button></a>
+
+    </figcaption>
+	</figure>
+</div>
+
+</body>
+
+
+
+    {% endfor %}
+    {% block scripts %}
+        <script src="static/scripts.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+{% endblock %}

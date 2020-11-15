@@ -2,29 +2,25 @@
 {% load bootstrap3 %}
 {% load static %}
 {% block content %}
+{{block.super}}
 
 {% block styles %}
   {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+<link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
   {% endblock %}
 <body style="background-color:rgb(133, 145, 199)">
-<h1 style = "text-align: center"> Pictures <Br>
-  <i class="fa fa-camera" aria-hidden="true"></i>
-
-<hr>
+<div class="container">
+<h1 style = "text-align: center"> Pictures <h1>
+ <hr>
     {% for photos_item in photos %}
-
 		<div class = "row">
-		<figure class = "test thumbnail col-xs-6">
-      <img src="{{photos_item.image.url}}" id="myImg"  class="img-responsive"  width="300" height="200">
-      <div class="titleBox" style="font-family: 'Cabin Sketch', cursive">{{photos_item.image_name|upper}}</div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="{{photos_item.photos_image.url}}" class="img-responsive" alt="Image">
+            </div>
 
-			<figcaption>
-
-			<a  href="{% url 'photos' photos_item.images %}"><button type="button" name="button" class="btn btn-danger"> view image</button></a>
-
-    </figcaption>
-	</figure>
+		<a  href="{% url 'photos' photos_item.images %}"><button type="button" name="button" class="btn btn-danger"> view image</button></a>
+    
+	
 </div>
 
 </body>

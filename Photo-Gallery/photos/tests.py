@@ -83,7 +83,13 @@ class ImageTestClass(TestCase):
         self.savannah.image_save()
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
-        
+
+    def test_delete_image(self):
+        self.savannah.image_save()
+        self.savannah.image_delete()
+        images = Image.objects.all()
+        self.assertTrue(len(images)==0)
+
 
 
 

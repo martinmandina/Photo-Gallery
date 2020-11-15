@@ -44,3 +44,6 @@ class Image(models.Model):
 
     def image_save(self):
         self.save()
+
+    def image_delete(self):
+        self.delete()

@@ -7,3 +7,5 @@ urlpatterns=[
     path('',views.display_images,name='photos'),
     # path('photo/(\d+)',views.image_one, name='singleimage'),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

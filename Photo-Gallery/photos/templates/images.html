@@ -7,11 +7,11 @@
   {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
   {% endblock %}
-<body>
-<h1 style = "text-align: center">My <Br>
+<body style="background-color:rgb(133, 145, 199)">
+<h1 style = "text-align: center"> Pictures <Br>
   <i class="fa fa-camera" aria-hidden="true"></i>
 
-<hr style="background-color:rgb(159, 157, 190)">
+<hr>
     {% for photos_item in photos %}
 
 		<div class = "row">
@@ -21,7 +21,7 @@
 
 			<figcaption>
 
-			<a  href="{% url 'singlePhoto' photos_item.id %}"><button type="button" name="button" class="btn btn-danger"> view image</button></a>
+			<a  href="{% url 'photos' photos_item.id %}"><button type="button" name="button" class="btn btn-danger"> view image</button></a>
 
     </figcaption>
 	</figure>

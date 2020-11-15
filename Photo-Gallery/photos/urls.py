@@ -4,6 +4,6 @@ from django.urls import path,re_path
 from django.conf.urls.static import static
 
 urlpatterns=[
-    path('',views.display_photos,name='photos'),
-    
+    path('',views.display_images,name='photos'),
+
 ]

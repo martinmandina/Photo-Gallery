@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+  {% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if images %}
+      <h2>Found {{ images|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 images for the search term {{message}} category</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if photos %}
+  {% for photo in photos %}
+  <div class="container">
+	<img src="{{image.photos_image.url}}" alt="img">
+	<h2>{{image.name}}</h2>
+	<p>{{image.description}}</p>
+	  </div>
+   {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

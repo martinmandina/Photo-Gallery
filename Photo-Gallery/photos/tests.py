@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Location,Category
+from .models import Location,Category,Image
 
 # Create your tests here.
 class LocationTestClass(TestCase):
@@ -28,22 +28,41 @@ class CategoryTestClass(TestCase):
         self.category.save()
 
     def test_instance(self):
+        self.category = Category(title = 'nature')
         self.category.save()
         self.assertTrue(isinstance(self.category,Category)) 
 
     def test_category_save(self):
+        self.category = Category(title = 'nature')
+        self.category.save()
         self.category.category_save()
         categories = Category.objects.all()
         self.assertTrue(len(categories)>0)
 
     
     def test_delete_category(self):
+        self.category = Category(title = 'nature')
+        self.category.save()
         self.category.category_delete()
         category = Category.objects.all()
         self.assertTrue(len(category)==0)
 
-    class ImageTestClass(TestCase):
+class ImageTestClass(TestCase):
     def setUp(self):
+        self.location = Location(title='Mombasa')
+        self.location.save()
+
+        self.category = Category(title='nature')
+        self.category.save()
+
+        self.savannah = Image(name='savannah',description='green and beatiful',location=self.location,category=self.category)
+        self.savannah.image_save()
+
+    
+    def test_instance(self):
+        self.assertTrue(isinstance(self.savannah,Image))
+
+
 
       
 

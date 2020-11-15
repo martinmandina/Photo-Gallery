@@ -2,7 +2,7 @@
 #### Live Link:''
 ### Description:
 #### This is an django application that displays a variety of photos and categorises photos and further a user can search various photos.
-### BDD AS A USER :
+### BDD AS A USER:
 #### Be able to view all images,
 #### Search images by different categories,
 #### View images by various locations

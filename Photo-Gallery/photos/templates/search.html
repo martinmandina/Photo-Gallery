@@ -26,12 +26,12 @@
 
   <div class="row">
 
-  {% if photos %}
-  {% for photo in photos %}
+  {% if mapicha %}
+  {% for moja in mapicha %}
   <div class="container">
-	<img src="{{image.photos_image.url}}" alt="img">
-	<h2>{{image.name}}</h2>
-	<p>{{image.description}}</p>
+	<img src="{{moja.address.url}}" alt="img">
+	<h2>{{moja.name}}</h2>
+	<p>{{moja.description}}</p>
 	  </div>
    {% endfor %}
   {% endif %}

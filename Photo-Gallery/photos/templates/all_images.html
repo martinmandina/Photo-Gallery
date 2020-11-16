@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+
+{% block styles %}
+  {% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+  {% endblock %}
+<body style="background-color:rgb(37, 23, 22)">
+<div class="container">
+<h1 style = "text-align: center"> Pictures <h1>
+ <hr>
+ the followwing are the pictures in our database
+<!-- start photo display-->
+{% for moja in mapicha %}
+<div class="photo-container">
+    <img src="{{moja.address.url}}" alt="martins photo gallery">
+    <h2>{{moja.name}}</h2>
+    <p>{{moja.description}}</p>
+    <a href="{{moja.address.url}}" class="button">view image</a>
+  </div>
+   {% endfor %}
+
+
+</div>
+
+</body>
+
+    {% block scripts %}
+        <script src="static/scripts.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+{% endblock %}

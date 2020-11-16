@@ -1,12 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Image,Location,Category
+from django import template
 
-# Create your views here.
+# register = template.Library()
+
+
+# # Create your views here.
+# @register.simple_tag()
+# def picha(request):
+#     picha = Image.objects.all()
+#     return render(request, 'list.html', locals())
 
 def display_images(request):
     images = Image.get_images()
-    return render(request,'images.html',{'images':images})
+    return render(request,'all_images.html',{'mapicha':images})
 
 def search_image(request):
     if 'image' in request.GET and request.GET["image"]:
@@ -27,7 +35,7 @@ def image_single(request, photo_id):
         singlephoto = photos.objects.get(id=photo_id)
     except DoesNotExist:
         raise Http404()
-    return render(request, 'Singleimage.html', {'singlephoto':singlephoto})
+    return render(request, 'single_image.html', {'singlephoto':singlephoto})
 
 
 

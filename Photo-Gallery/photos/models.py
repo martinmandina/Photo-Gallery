@@ -40,7 +40,7 @@ class Image(models.Model):
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    photos = models.ImageField(upload_to = 'images/')
+    address = models.ImageField(upload_to = 'images/')
 
     def image_save(self):
         self.save()
@@ -53,8 +53,8 @@ class Image(models.Model):
 
     @classmethod
     def get_images(cls):
-        images = cls.objects.all()
-        return images
+        picha = cls.objects.all()
+        return picha
 
     @classmethod
     def search_category(cls,search_term):

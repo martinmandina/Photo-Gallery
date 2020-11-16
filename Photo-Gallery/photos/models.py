@@ -62,6 +62,11 @@ class Image(models.Model):
         return categories
 
     @classmethod
+    def search_name(cls,search_term):
+        name = cls.objects.filter(name__title__icontains=search_term)
+        return name
+
+    @classmethod
     def image_single(cls,id):
         photo = cls.objects.get(pk = id)
         return photo

@@ -4,7 +4,6 @@ from django.urls import path
 from django.conf.urls.static import static
 
 urlpatterns=[
-    # path('list',views.picha,name='picha'),
     path('',views.display_images,name='mapicha'),
     path('search/', views.search_image,name='search_results'),
     path('photo/(\d+)',views.image_single, name='image'),

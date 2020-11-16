@@ -3,15 +3,6 @@ from django.http import HttpResponse
 from .models import Image,Location,Category
 from django import template
 
-# register = template.Library()
-
-
-# # Create your views here.
-# @register.simple_tag()
-# def picha(request):
-#     picha = Image.objects.all()
-#     return render(request, 'list.html', locals())
-
 def display_images(request):
     images = Image.get_images()
     return render(request,'all_images.html',{'mapicha':images})

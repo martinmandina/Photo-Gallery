@@ -14,11 +14,28 @@
 
   {% block styles%}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'css/basephotos.css' %}">-->
   {% endblock %}
+  {% load static %}
 
+  <!--<link rel="stylesheet" type="text/css" href="{% static 'css/basephotos.css' %}">-->
+
+  <style>
+    @import url(//fonts.googleapis.com/css?family=indie+flower);
+    body {
+      background-color: rgb(6, 3, 19);
+      font-family: 'indie flower', sans-serif;
+      padding-left:0;
+    }
+    
+    h1 {
+      color: maroon;
+      margin-left: 40px;
+    }
+    p    {color: red; font-size:30px;}
+    </style>
 </head>
-<body style="background-color:#af9f99">
+<body>
     {% include "navbar.html" %}
     {% block content %}
     {%endblock%}

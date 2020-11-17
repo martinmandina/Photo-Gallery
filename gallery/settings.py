@@ -179,9 +179,9 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 cloudinary.config( 
-  cloud_name = "mrtnz", 
-  api_key = "518389863345774", 
-  api_secret = "6SV2ftm8htYpG-Cl1gYLjWwC_V8" 
+  cloud_name=config('cloud_name'),
+  api_key=config('api_key'),
+  api_secret=config('api_secret')
 )
 
 

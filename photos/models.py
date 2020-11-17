@@ -1,4 +1,9 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
+class Photo(models.Model):
+  image = CloudinaryField('image')
+
 
 # Create your models here.
 class Location(models.Model):

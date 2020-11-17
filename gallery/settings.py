@@ -15,6 +15,10 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -47,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos',
     'bootstrap3',
+    'cloudinary'
     
 ]
 
@@ -172,6 +177,12 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+cloudinary.config( 
+  cloud_name = "mrtnz", 
+  api_key = "518389863345774", 
+  api_secret = "6SV2ftm8htYpG-Cl1gYLjWwC_V8" 
+)
 
 
 

@@ -30,8 +30,8 @@
   {% for moja in images %}
   <div class="container">
 	<img src="{{moja.address.url}}" alt="img" width="55%">
-	<h2>{{moja.name}}</h2>
-	<h2>{{moja.description}}</h2>
+	<h2><span style="color:rgb(151, 64, 24);">Name</span><br>{{moja.name}}</h2>
+	<h2><span style="color:rgb(151, 64, 24);">Description:</span><br>{{moja.description}}</h2>
 	  </div>
    {% endfor %}
   {% endif %}

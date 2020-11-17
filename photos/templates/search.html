@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+  {% endblock %}
+</head>
+<body style="background-color:rgb(133, 145, 199)">
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if images %}
+      <h2>Found {{ images|length }} of searched term Category <strong style="color:rgb(151, 64, 24);">{{message}}</strong></h2>
+    {% else %}
+      <h2> Found 0 images for the search term {{message}} category</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if images %}
+  {% for moja in images %}
+  <div class="container">
+	<img src="{{moja.address.url}}" alt="img" width="55%">
+	<h2><span style="color:rgb(151, 64, 24);">Name</span><br>{{moja.name}}</h2>
+	<h2><span style="color:rgb(151, 64, 24);">Description:</span><br>{{moja.description}}</h2>
+	  </div>
+   {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
+

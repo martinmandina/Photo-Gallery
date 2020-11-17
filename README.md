@@ -39,3 +39,7 @@
 #### TEL:+254 722 675 630
 ### LICENSE
 #### * Copyright (c) 2020 **Martin Mandina**
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12aa04fbeb2d2e7cf1f59d11d5536237fcd1725d

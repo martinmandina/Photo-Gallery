@@ -1,4 +1,5 @@
 from django.db import models
+import cloudinary
 from cloudinary.models import CloudinaryField
 
 class Photo(models.Model):
